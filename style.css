@@ -38,6 +38,7 @@
     /* Layout Constants */
     --max-width: 1200px;
     --nav-height: 80px;
+    --container-padding: 2rem;
     --border-radius-sm: 8px;
     --border-radius-md: 16px;
     --border-radius-lg: 24px;
@@ -178,11 +179,12 @@ body {
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 var(--container-padding);
 }
 
 .section-padding {
-    padding: 8rem 0 4rem 0;
+    padding-top: 8rem;
+    padding-bottom: 4rem;
 }
 
 .gradient-text {
@@ -1291,12 +1293,13 @@ body {
         font-size: 14px;
     }
     
-    .container {
-        padding: 0 2.25rem;
+    :root {
+        --container-padding: 1.5rem;
     }
     
     .section-padding {
-        padding: 6rem 0 3rem 0;
+        padding-top: 6rem;
+        padding-bottom: 3rem;
     }
     
     .hero-title {
@@ -1323,6 +1326,10 @@ body {
         font-size: 0.9rem;
     }
     
+    .project-card {
+        padding: 1.5rem;
+    }
+    
     .timeline-line {
         left: 20px;
     }
@@ -1335,8 +1342,17 @@ body {
         padding-left: 3.5rem;
     }
     
+    .timeline-card {
+        padding: 1.5rem;
+    }
+    
+    .info-card {
+        padding: 1.25rem;
+        gap: 1rem;
+    }
+    
     .contact-form-container {
-        padding: 2rem 1.5rem;
+        padding: 1.75rem 1.25rem;
     }
     
     .footer-content {
