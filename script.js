@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'a Full-Stack Developer.',
         'a ZyberLab Developer Intern.',
         'an IoT Hardware Builder.',
-        'a Systems Engineering Student.',
+        'a Computer Science Student.',
         'a Hybrid AI Enthusiast.'
     ];
 
