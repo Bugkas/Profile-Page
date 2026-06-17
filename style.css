@@ -774,11 +774,13 @@ body {
     top: 0;
     left: 0;
     height: 100%;
-    width: 0; /* Animated dynamically by JS */
+    width: var(--skill-fill-width, 0%);
     background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
     border-radius: 10px;
     transition: width 1.2s cubic-bezier(0.1, 0.8, 0.2, 1);
 }
+
+
 
 /* ==========================================================================
    PROJECTS SECTION

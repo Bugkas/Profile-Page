@@ -178,11 +178,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         statsObserver.observe(aboutSection);
     }
-
     /* ==========================================================================
        SKILL PROGRESS FILL ANIMATION
        ========================================================================== */
-    const skillBars = document.querySelectorAll('.skill-level-bar');
     const skillsSection = document.getElementById('skills');
 
     // Tab switcher logic
@@ -204,16 +202,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Trigger animation on newly shown grids
             const activeBars = targetGrid.querySelectorAll('.skill-level-bar');
             activeBars.forEach(bar => {
+                bar.style.setProperty('--skill-fill-width', '0%');
                 setTimeout(() => {
-                    bar.style.setProperty('--bar-width', bar.getAttribute('data-level'));
-                    // Apply inline width for direct fallback
-                    bar.style.width = '100%'; 
-                    // Update pseudo elements dynamically via custom properties
-                    const targetPercent = bar.getAttribute('data-level');
-                    // We set width directly in style sheets via custom animation
-                    // but for vanilla CSS we set inline style rule variables:
-                    bar.style.setProperty('--skill-fill-width', targetPercent);
-                }, 100);
+                    bar.style.setProperty('--skill-fill-width', bar.getAttribute('data-level'));
+                }, 50);
             });
         });
     });
@@ -228,32 +220,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     const bars = activeGrid.querySelectorAll('.skill-level-bar');
                     bars.forEach(bar => {
                         const targetPercent = bar.getAttribute('data-level');
-                        // Add a style tag or inline CSS variable for pseudo-element width
                         bar.style.setProperty('--skill-fill-width', targetPercent);
-                        
-                        // We will set style rules dynamically by writing to custom CSS variables
-                        // We will add class to trigger width transition
-                        bar.style.setProperty('--bar-width', targetPercent);
-                        
-                        // Creating a small dynamic style injection for the pseudoelement
-                        const barId = Math.random().toString(36).substring(2, 9);
-                        bar.setAttribute('data-bar-id', barId);
-                        
-                        let style = document.querySelector('#skill-dynamic-styles');
-                        if (!style) {
-                            style = document.createElement('style');
-                            style.id = 'skill-dynamic-styles';
-                            document.head.appendChild(style);
-                        }
-                        style.sheet.insertRule(`[data-bar-id="${barId}"]::before { width: ${targetPercent} !important; }`, style.sheet.cssRules.length);
                     });
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.15 });
 
         skillsObserver.observe(skillsSection);
     }
-
     /* ==========================================================================
        CONTACT FORM SUBMISSION HANDLER
        ========================================================================== */
