@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const typingTextEl = document.getElementById('typing-text');
     const phrases = [
         'a Full-Stack Developer.',
-        'a ZyberLab Developer Intern.',
+        'a ZyberLab Junior Developer.',
         'an IoT Hardware Builder.',
         'a Computer Science Student.',
         'a Hybrid AI Enthusiast.'
