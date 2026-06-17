@@ -90,11 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
     const typingTextEl = document.getElementById('typing-text');
     const phrases = [
-        'Full-Stack Developer.',
-        'ZyberLab Developer Intern.',
-        'IoT Hardware Builder.',
-        'Systems Engineering Student.',
-        'Hybrid AI Enthusiast.'
+        'a Full-Stack Developer.',
+        'a ZyberLab Developer Intern.',
+        'an IoT Hardware Builder.',
+        'a Systems Engineering Student.',
+        'a Hybrid AI Enthusiast.'
     ];
 
     let phraseIndex = 0;
