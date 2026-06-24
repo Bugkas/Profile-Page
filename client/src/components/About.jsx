@@ -26,8 +26,7 @@ export default function About() {
 
           <div className="stats-grid">
             <StatCard targetVal={12} label="Projects Completed" />
-            <StatCard targetVal={240} label="Hours of Coding" />
-            <StatCard targetVal={87.7} label="Academic Grade Avg" />
+            <StatCard targetVal={5400} label="Hours of Coding" />
           </div>
         </div>
 

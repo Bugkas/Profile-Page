@@ -7,7 +7,7 @@ export default function Experience() {
       details: 'Developing and scaling end-to-end web applications, designing database architectures, building RESTful APIs, and coordinating software deployments in development and production environments.'
     },
     {
-      date: 'Mar 2025 - Apr 2026',
+      date: 'Mar 2026 - Apr 2026',
       title: 'Full-Stack Developer Intern',
       company: 'ZyberLab Solution Inc.',
       details: 'Engineered frontend views and modular components, optimized database queries for client systems, integrated third-party RESTful APIs, and maintained code versions across dev and production instances.'
