@@ -1,27 +1,30 @@
 # Jericho Boado | Portfolio & Professional Profile
 
-Welcome to the source repository for my professional portfolio website. This project showcases my work as a Junior Full-Stack Developer and Computer Science Student, detailing my experience in web development, IoT, and Hybrid AI integrations.
+Welcome to the source repository for my professional portfolio website. This branch features an enhanced, production-ready **PERN monorepo architecture** (PostgreSQL, Express, React, Node.js) configured for seamless hosting on Vercel, real-time database logging, and email notifications.
 
-The live page features a modern, high-performance, responsive layout designed with a glassmorphic look, customizable dark/light theme options, and fluid CSS animations.
+The interface retains its premium glassmorphic theme and smooth animations, now modularized into React components with refined visual ratings.
 
 ---
 
 ## 🚀 Key Features
 
-*   **Responsive Modern UI:** Seamless layout transitions tailored for mobile, tablet, and desktop screens.
-*   **Dual-Theme Engine:** Custom CSS variables enabling clean, instant toggling between Dark Mode and Light Mode.
-*   **Typewriter Effect:** Animated hero section highlighting key technical specializations.
-*   **Interactive Skills Dashboard:** Tabbed selector classifying technical proficiencies across Languages, Frontend, Backend, and IoT.
-*   **Dynamic Stats Counters:** JavaScript-driven counter animation on scroll.
-*   **Glassmorphic Design:** Styled using custom CSS mesh gradients, blur filters, and glow animations.
+*   **Vite React Frontend:** Migrated from vanilla JavaScript to modular, component-driven React.
+*   **MVC Serverless Express Backend:** Clean separation of concerns with config, routes, controllers, and models.
+*   **PostgreSQL Persistence:** Automated table verification and database entry logging for all contact form submissions.
+*   **Resend Email Notifications:** Real-time form notification alerts sent straight to your email destination using the Resend SDK.
+*   **Toolbox Star & Fraction Ratings:** Replaced percentage progress bars in the Skills section with premium visual rating stars (using linear-gradient SVGs for half-stars) and fraction metrics (e.g. `4.5/5`).
+*   **Dual-Theme Engine:** Easy-to-use Dark Mode and Light Mode toggles.
+*   **Dynamic Stats Counters:** Viewport-triggered counters that animate on scroll.
 
 ---
 
 ## 🛠️ Technology Stack
 
-*   **Markup:** HTML5 (Semantic and SEO-optimized structure)
-*   **Styling:** CSS3 (Vanilla stylesheet featuring responsive flex/grid layouts, customized CSS custom properties, keyframes, and transitions)
-*   **Scripting:** Vanilla JavaScript (ES6+ for interactive DOM events, animations, theme state management, and contact validation)
+*   **Frontend:** React 19, Vite, CSS3 (Vanilla styles, responsive grids, blur filters, keyframe transitions).
+*   **Backend:** Express, Node.js (arranged in an MVC structure).
+*   **Database:** PostgreSQL (hosted on Supabase, connected via `pg.Pool`).
+*   **Mailer Service:** Resend API.
+*   **Deployment:** Vercel serverless environment.
 
 ---
 
@@ -29,38 +32,64 @@ The live page features a modern, high-performance, responsive layout designed wi
 
 ```text
 .
-├── assets/             # Media resources, icons, and graphics
-│   └── avatar.png      # Profile picture used in the Hero section
-├── index.html          # Main HTML entry point containing semantic layouts
-├── script.js           # Client-side logic (typewriter effect, mobile navigation, theme switcher)
-├── style.css           # Styling rules, design variables, and layout systems
-└── README.md           # Project documentation (this file)
+├── api/                  # Express serverless backend (MVC architecture)
+│   ├── config/           # Database and mailer configuration clients
+│   ├── controllers/      # Request handlers & validation logic
+│   ├── models/           # Database schema initialization and query logic
+│   ├── routes/           # Express endpoint definitions
+│   └── index.js          # Server entrypoint / Vercel serverless function
+├── client/               # React frontend (Vite environment)
+│   ├── public/           # Static media assets (avatar, icons)
+│   ├── src/              # React source directory
+│   │   ├── components/   # Modular, reusable visual components
+│   │   │   ├── StatCard.jsx    # Numeric counting animations
+│   │   │   ├── StarRating.jsx  # Partial/full rating SVG stars
+│   │   │   └── Typewriter.jsx  # Typing cursor effect
+│   │   ├── App.jsx       # Section loader and active nav manager
+│   │   ├── index.css     # Global glassmorphic styling system
+│   │   └── main.jsx      # Vite React root mounting
+│   ├── index.html        # Main HTML layout wrapper with Google Fonts
+│   ├── package.json      # Client package registry
+│   └── vite.config.js    # Vite compilation rules
+├── archive/              # Folder housing legacy files (for reference)
+├── vercel.json           # Vercel monorepo deployment configurations
+├── package.json          # Root workspace setup and runner scripts
+└── README.md             # Project documentation (this file)
 ```
 
 ---
 
 ## 💻 Local Setup and Running
 
-Since this project is built entirely on vanilla web technologies, it requires no package compilation or dependency installations.
+To run both the React client and the Express backend locally:
 
-### Method A: Local File System
-Simply clone the repository and open `index.html` in your web browser:
+### 1. Install Dependencies
+Run the install command at the root workspace directory. This will resolve all packages for the monorepo:
 ```bash
-git clone https://github.com/Bugkas/Profile-Page.git
-cd "Profile Page"
-# Double-click index.html or open via terminal
-xdg-open index.html # On Linux
-open index.html     # On macOS
+npm install
 ```
 
-### Method B: Local Server (Recommended for smooth asset loading)
-To serve the files over a local web server (useful to avoid some local cross-origin restrictions):
-
-Using Python (Python 3.x required):
+### 2. Configure Environment Variables
+Create a `.env` file at the root of the project using the template provided:
 ```bash
-python3 -m http.server 8000
+cp .env.example .env
 ```
-Then navigate to [http://localhost:8000](http://localhost:8000) in your web browser.
+Open the `.env` file and enter your configurations:
+```env
+DATABASE_URL=your_supabase_postgresql_connection_string
+RESEND_API_KEY=your_resend_api_key
+PORT=5000
+NOTIFICATION_EMAIL=your_inbox_destination_email
+NODE_ENV=development
+```
+
+### 3. Run Development Servers
+Start both the Vite dev server and the local Express server concurrently:
+```bash
+npm run dev
+```
+*   **Frontend:** Viewable at [http://localhost:5173](http://localhost:5173)
+*   **Backend:** Listening on [http://localhost:5000](http://localhost:5000)
 
 ---
 
