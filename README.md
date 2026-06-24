@@ -96,4 +96,4 @@ npm run dev
 ## 📞 Contact & Networks
 
 *   **GitHub:** [github.com/Bugkas](https://github.com/Bugkas)
-*   **Email:** echotagacy0223@gmail.com
+*   **Email:** echotagacay0223@gmail.com

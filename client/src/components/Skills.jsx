@@ -3,30 +3,30 @@ import StarRating from './StarRating';
 
 const SKILLS_DATA = {
   languages: [
-    { name: 'JavaScript (ES6+)', level: 4.5 },
+    { name: 'JavaScript (ES6+)', level: 4.0 },
     { name: 'Python', level: 4.0 },
-    { name: 'C++', level: 3.5 },
+    { name: 'C++', level: 3.0 },
     { name: 'SQL', level: 4.0 },
-    { name: 'HTML5 / CSS3', level: 4.5 }
+    { name: 'HTML5 / CSS3', level: 4.0 }
   ],
   frontend: [
-    { name: 'React.js', level: 4.5 },
+    { name: 'React.js', level: 4.0 },
     { name: 'Next.js', level: 3.5 },
-    { name: 'Tailwind CSS', level: 4.5 },
-    { name: 'Responsive Design', level: 4.5 },
-    { name: 'Vanilla DOM Manipulation', level: 4.5 }
+    { name: 'Tailwind CSS', level: 4.0 },
+    { name: 'Responsive Design', level: 4.0 },
+    { name: 'Vanilla DOM Manipulation', level: 4.0 }
   ],
   backend: [
     { name: 'Node.js / Express', level: 4.0 },
-    { name: 'RESTful APIs', level: 4.5 },
+    { name: 'RESTful APIs', level: 4.0 },
     { name: 'MySQL / PostgreSQL', level: 4.0 },
     { name: 'MongoDB', level: 3.5 },
-    { name: 'Firebase', level: 4.0 }
+    { name: 'Firebase', level: 3.0 }
   ],
   'iot-tools': [
-    { name: 'ESP8266 & ESP32 Microcontrollers', level: 4.5 },
+    { name: 'ESP8266 & ESP32 Microcontrollers', level: 4.0 },
     { name: 'Arduino IDE / C++ Firmware', level: 4.0 },
-    { name: 'Git & GitHub Version Control', level: 4.5 },
+    { name: 'Git & GitHub Version Control', level: 4.0 },
     { name: 'Linux Command Line & Bash', level: 4.0 },
     { name: 'Ollama Local LLM Deployments', level: 3.5 }
   ]

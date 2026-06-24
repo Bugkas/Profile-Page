@@ -18,7 +18,7 @@ const sendNotificationEmail = async ({ name, email, subject, message }) => {
     return { success: false, error: 'Resend API key missing' };
   }
 
-  const recipient = process.env.NOTIFICATION_EMAIL || 'echotagacy0223@gmail.com';
+  const recipient = process.env.NOTIFICATION_EMAIL || 'echotagacay0223@gmail.com';
 
   try {
     const data = await resend.emails.send({
